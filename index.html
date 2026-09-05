@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SchemeConnect AI helps citizens discover government benefits they may qualify for.">
+  <title>SchemeConnect AI | Benefits made clear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="login-page" id="loginPage">
+    <div class="login-brand"><span class="brand-mark">✦</span><span>SchemeConnect <b>AI</b></span></div>
+    <div class="login-layout">
+      <div class="login-intro"><p class="eyebrow">YOUR BENEFITS, MADE CLEAR</p><h1>Find the support your family deserves.</h1><p>One simple profile. Relevant government schemes, explained in plain language.</p><div class="login-proof"><span>✓</span><div><strong>Trusted government sources</strong><small>Central and state schemes in one place</small></div></div></div>
+      <form class="login-card" id="registerForm">
+        <p class="eyebrow">FIRST STEP · CREATE ACCOUNT</p><h2>Register to begin.</h2><p class="login-copy">Create your private SchemeConnect account. We use your details to find relevant government benefits.</p>
+        <label>Full name<input id="registerName" type="text" placeholder="e.g. Aarav Mehta" required></label>
+        <label>Mobile number<input id="registerPhone" type="tel" inputmode="numeric" placeholder="10-digit mobile number" pattern="[0-9]{10}" required></label>
+        <label>Password<input id="registerPassword" type="password" autocomplete="new-password" minlength="6" placeholder="At least 6 characters" required></label>
+        <label>Confirm password<input id="registerConfirmPassword" type="password" autocomplete="new-password" minlength="6" placeholder="Repeat your password" required></label>
+        <label class="consent"><input id="registerConsent" type="checkbox" required><span>I agree to use my information to discover eligible benefits.</span></label>
+        <button class="primary-button" type="submit">Create account <span>→</span></button>
+        <small class="login-note">You will log in with the same phone number and password next.</small>
+      </form>
+      <form class="login-card" id="loginForm" hidden>
+        <p class="eyebrow">WELCOME TO SCHEMECONNECT</p><h2>Start with your details.</h2><p class="login-copy">We use these details to find schemes that fit you. Nothing is shared without your permission.</p>
+        <label>Full name<input id="loginName" type="text" placeholder="e.g. Aarav Mehta" required></label>
+        <label>Mobile number<input id="loginPhone" type="tel" inputmode="numeric" placeholder="10-digit mobile number" pattern="[0-9]{10}" required></label>
+        <label>Password<input id="loginPassword" type="password" autocomplete="current-password" minlength="6" placeholder="At least 6 characters" required></label>
+        <button class="forgot-link" type="button" id="forgotPassword">Forgot password?</button>
+        <label class="consent"><input type="checkbox"><span>I agree to use my information to discover eligible benefits.</span></label>
+        <button class="primary-button" type="submit">Continue securely <span>→</span></button>
+        <small class="login-note">Your password is used only for this sign-in demo.</small>
+      </form>
+    </div>
+    <div class="login-footer"><span>SchemeConnect AI</span><span>Privacy first · Information from official sources</span></div>
+  </section>
+  <div class="app-shell" hidden>
+    <aside class="sidebar" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="SchemeConnect AI home">
+        <span class="brand-mark">✦</span>
+        <span>SchemeConnect <b>AI</b></span>
+      </a>
+      <div class="sidebar-label" data-i18n="workspace">Workspace</div>
+      <nav class="nav-list">
+        <a class="nav-item active" href="#discover"><span class="nav-icon">⌕</span><span data-i18n="discover">Discover schemes</span></a>
+        <a class="nav-item" href="#saved"><span class="nav-icon">♡</span><span data-i18n="saved">Saved for later</span> <span class="nav-count">3</span></a>
+        <a class="nav-item" href="#applications"><span class="nav-icon">✓</span><span data-i18n="applications">My applications</span></a>
+      </nav>
+      <div class="sidebar-label help-label">Need a hand?</div>
+      <div class="help-card">
+        <span class="help-icon">?</span>
+        <strong>Talk to a guide</strong>
+        <p>Get help understanding your options in your language.</p>
+        <button class="text-button" type="button" id="guideButton">Connect with a guide <span>→</span></button>
+      </div>
+      <div class="sidebar-footer">
+        <a href="#accessibility">Accessibility</a>
+        <a href="#privacy">Privacy</a>
+        <button type="button" id="logoutButton">Log out</button>
+      </div>
+    </aside>
+
+    <main class="main-content" id="top">
+      <header class="topbar">
+        <button class="mobile-menu" type="button" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb">My workspace <span>/</span> Discover</div>
+        <div class="topbar-actions">
+          <label class="language-button"><span>文</span><select id="languageSelect" aria-label="Choose language"><option value="en">English</option><option value="hi">हिन्दी</option><option value="mr">मराठी</option><option value="ta">தமிழ்</option></select><span class="chevron">⌄</span></label>
+          <button class="icon-button" type="button" aria-label="Notifications"><span class="notification-dot"></span>♧</button>
+          <button class="profile-button" type="button" aria-label="Open profile menu"><span class="avatar" id="profileAvatar">AM</span><span class="profile-name" id="profileName">Aarav Mehta</span><span class="chevron">⌄</span></button>
+        </div>
+      </header>
+
+      <div class="content-wrap" id="discover">
+        <section class="welcome-row">
+          <div>
+            <p class="eyebrow">SATURDAY, 05 SEPTEMBER 2026</p>
+            <h1 data-i18n="heroTitle">Find support that fits your life.</h1>
+            <p class="intro"><span data-i18n="found">We found</span> <strong id="resultCount">12</strong> <span data-i18n="schemesRelevant">schemes that may be relevant to your profile.</span></p>
+          </div>
+          <button class="outline-button" type="button" id="editProfile"><span>✎</span> <span data-i18n="editProfile">Edit my profile</span></button>
+        </section>
+
+        <section class="profile-strip" aria-label="Your profile summary">
+          <div class="profile-progress"><span class="progress-ring"><span>72%</span></span><div><strong>Your profile</strong><small>Good match accuracy</small></div></div>
+          <div class="profile-facts"><span id="profileLocation"><i>⌂</i> Maharashtra</span><span id="profileFamily"><i>♙</i> Family of 4</span><span id="profileIncome"><i>₹</i> ₹2–5 lakh income</span><span id="profileOccupation"><i>⌁</i> Small business</span></div>
+          <button class="complete-button" type="button" id="completeProfile">Improve matches <span>→</span></button>
+        </section>
+
+        <section class="official-strip" aria-label="Official government directory status">
+          <div class="official-mark">✓</div>
+          <div class="official-copy"><strong>Official government directory</strong><span>4,770+ central and state schemes available</span></div>
+          <div class="sync-status"><span class="sync-dot"></span><span>Checked 05 Sep 2026</span></div>
+          <a class="source-link" href="https://www.myscheme.gov.in/" target="_blank" rel="noreferrer">Open myScheme ↗</a>
+          <button class="refresh-button" type="button" id="refreshSources"><span>↻</span> Refresh sources</button>
+        </section>
+
+        <section class="state-directory" aria-label="State and union territory schemes">
+          <div class="state-directory-copy"><p class="eyebrow">STATE &amp; UNION TERRITORY DIRECTORY</p><h2>Choose a government portal</h2><p>Browse schemes published by every Indian state and union territory.</p></div>
+          <div class="state-directory-actions"><label for="stateSelect">State or UT<select id="stateSelect"><option value="https://www.maharashtra.gov.in/">Maharashtra</option><option value="https://www.andhrapradesh.gov.in/">Andhra Pradesh</option><option value="https://arunachalpradesh.gov.in/">Arunachal Pradesh</option><option value="https://assam.gov.in/">Assam</option><option value="https://state.bihar.gov.in/">Bihar</option><option value="https://chhattisgarh.gov.in/">Chhattisgarh</option><option value="https://www.goa.gov.in/">Goa</option><option value="https://gujaratindia.gov.in/">Gujarat</option><option value="https://www.haryana.gov.in/">Haryana</option><option value="https://himachal.nic.in/">Himachal Pradesh</option><option value="https://www.jharkhand.gov.in/">Jharkhand</option><option value="https://www.karnataka.gov.in/">Karnataka</option><option value="https://kerala.gov.in/">Kerala</option><option value="https://mp.gov.in/">Madhya Pradesh</option><option value="https://manipur.gov.in/">Manipur</option><option value="https://meghalaya.gov.in/">Meghalaya</option><option value="https://mizoram.gov.in/">Mizoram</option><option value="https://nagaland.gov.in/">Nagaland</option><option value="https://odisha.gov.in/">Odisha</option><option value="https://punjab.gov.in/">Punjab</option><option value="https://rajasthan.gov.in/">Rajasthan</option><option value="https://sikkim.gov.in/">Sikkim</option><option value="https://www.tn.gov.in/">Tamil Nadu</option><option value="https://www.telangana.gov.in/">Telangana</option><option value="https://tripura.gov.in/">Tripura</option><option value="https://up.gov.in/">Uttar Pradesh</option><option value="https://uk.gov.in/">Uttarakhand</option><option value="https://wb.gov.in/">West Bengal</option><option value="https://andaman.gov.in/">Andaman and Nicobar Islands</option><option value="https://chandigarh.gov.in/">Chandigarh</option><option value="https://ddd.gov.in/">Dadra and Nagar Haveli and Daman and Diu</option><option value="https://delhi.gov.in/">Delhi</option><option value="https://jk.gov.in/">Jammu and Kashmir</option><option value="https://ladakh.gov.in/">Ladakh</option><option value="https://lakshadweep.gov.in/">Lakshadweep</option><option value="https://py.gov.in/">Puducherry</option></select></label><button class="state-open-button" type="button" id="openStatePortal">Open official portal ↗</button></div>
+          <a class="all-states-link" href="https://www.india.gov.in/my-government/schemes" target="_blank" rel="noreferrer">See all state schemes on India.gov ↗</a>
+        </section>
+
+        <section class="state-schemes-panel" aria-labelledby="stateSchemesTitle">
+          <div class="panel-heading"><div><p class="eyebrow">STUDENT &amp; FAMILY SUPPORT</p><h2 id="stateSchemesTitle">State scheme shortcuts</h2><p>Open the official service for fee reimbursement, scholarships, and welfare support.</p></div><div class="state-tabs" role="tablist"><button class="state-tab active" type="button" data-state-schemes="ap" role="tab">Andhra Pradesh</button><button class="state-tab" type="button" data-state-schemes="ts" role="tab">Telangana</button></div></div>
+          <div class="state-scheme-grid" id="stateSchemeGrid"></div>
+        </section>
+
+        <section class="insight-banner">
+          <div class="insight-icon">✦</div>
+          <div><strong>A quick insight for you</strong><p>Families with school-age children often miss out on <b>education support</b>. We’ve highlighted 3 opportunities below.</p></div>
+          <button class="close-banner" type="button" aria-label="Dismiss insight">×</button>
+        </section>
+
+        <section class="section-heading">
+          <div><h2>Recommended for you</h2><p>Prioritized by fit, benefit value, and application effort.</p></div>
+          <div class="view-toggle" role="group" aria-label="Change view"><button class="view-button active" type="button" aria-label="Card view">▦</button><button class="view-button" type="button" aria-label="List view">☷</button></div>
+        </section>
+
+        <section class="filter-row" aria-label="Scheme filters">
+          <div class="search-field"><span>⌕</span><input id="searchInput" type="search" placeholder="Search schemes, benefits, or needs" aria-label="Search schemes"></div>
+          <button class="filter-button active" type="button" data-filter="all">All <span>12</span></button>
+          <button class="filter-button" type="button" data-filter="high">Strong match <span>6</span></button>
+          <button class="filter-button" type="button" data-filter="latest">Latest updates</button>
+          <button class="filter-button" type="button" data-filter="education">Education</button>
+          <button class="filter-button" type="button" data-filter="business">Business</button>
+          <button class="sort-button" type="button">Best match <span>⌄</span></button>
+        </section>
+
+        <section class="scheme-grid" id="schemeGrid" aria-live="polite"></section>
+        <div class="empty-state" id="emptyState" hidden><span>⌕</span><h3>No schemes found</h3><p>Try a different search or remove a filter.</p></div>
+
+        <section class="trust-row">
+          <div class="trust-icon">✓</div><div><strong>Information you can trust</strong><p>Scheme details are checked against official government sources and reviewed regularly.</p></div><a href="#sources">How we verify information <span>↗</span></a>
+        </section>
+
+        <section class="workspace-panel" id="saved" aria-labelledby="savedTitle">
+          <div class="panel-heading"><div><p class="eyebrow">YOUR SHORTLIST</p><h2 id="savedTitle">Saved for later</h2><p>Keep useful schemes close while you collect documents.</p></div><span class="panel-count">3 saved</span></div>
+          <div class="saved-list"><article class="saved-item"><span class="saved-symbol">♡</span><div><strong>MahaDBT Education Scholarship</strong><small>Education · Up to ₹50,000 / year</small></div><a href="https://www.myscheme.gov.in/" target="_blank" rel="noreferrer">Open official details ↗</a></article><article class="saved-item"><span class="saved-symbol">♡</span><div><strong>PM SVANidhi Working Capital</strong><small>Business · Loans up to ₹50,000</small></div><a href="https://www.myscheme.gov.in/" target="_blank" rel="noreferrer">Open official details ↗</a></article><article class="saved-item"><span class="saved-symbol">♡</span><div><strong>Ayushman Bharat PM-JAY</strong><small>Health · ₹5 lakh health cover</small></div><a href="https://www.myscheme.gov.in/" target="_blank" rel="noreferrer">Open official details ↗</a></article></div>
+        </section>
+
+        <section class="workspace-panel" id="applications" aria-labelledby="applicationsTitle">
+          <div class="panel-heading"><div><p class="eyebrow">APPLICATION TRACKER</p><h2 id="applicationsTitle">My applications</h2><p>Track the next step for every scheme you choose.</p></div><button class="outline-button" type="button" id="addApplication">＋ Add application</button></div>
+          <div class="application-list"><article class="application-item"><span class="application-status in-progress">1</span><div><strong>PM SVANidhi Working Capital</strong><small>Documents pending · Last updated today</small></div><span class="status-label">In progress</span><button class="details-button" type="button" data-application="PM SVANidhi Working Capital">View steps →</button></article><article class="application-item"><span class="application-status">✓</span><div><strong>MahaDBT Education Scholarship</strong><small>Profile matched · Ready to apply</small></div><span class="status-label ready">Ready</span><button class="details-button" type="button" data-application="MahaDBT Education Scholarship">View steps →</button></article></div>
+        </section>
+      </div>
+    </main>
+    <aside class="ai-panel" id="aiPanel" aria-label="SchemeConnect AI assistant">
+      <div class="ai-panel-header"><div class="ai-identity"><span class="ai-orb">✦</span><div><strong>SchemeGuide AI</strong><small>Ready to help</small></div></div><span class="ai-live-dot"></span></div>
+      <div class="ai-intro"><p class="eyebrow">YOUR BENEFITS GUIDE</p><h2>What can I help you find?</h2><p>Ask me about eligibility, documents, or the next step for a scheme.</p></div>
+      <div class="ai-suggestions"><button type="button" data-ai-question="What documents do I need for fee reimbursement?">Fee reimbursement documents</button><button type="button" data-ai-question="Which schemes can help a student?">Support for students</button><button type="button" data-ai-question="Show me family benefits">Family benefits</button></div>
+      <div class="ai-messages" id="aiMessages"><div class="ai-message assistant">Hi! I can help you compare schemes and prepare your application.</div></div>
+      <form class="ai-composer" id="aiForm"><input id="aiInput" type="text" placeholder="Ask a question..." aria-label="Ask SchemeGuide AI"><button type="submit" aria-label="Send question">→</button></form>
+      <small class="ai-disclaimer">AI guidance is informational. Always verify details on the official portal.</small>
+    </aside>
+  </div>
+
+  <div class="modal-backdrop" id="profileModal" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" aria-label="Close">×</button>
+      <p class="eyebrow">YOUR PROFILE</p><h2 id="modalTitle">Make your matches more personal.</h2><p class="modal-copy">Tell us a little more. You can change these details anytime.</p>
+      <form id="profileForm">
+        <label>Username<input id="profileUsernameInput" type="text" value="aarav.mehta"></label>
+        <label>Your name<input id="profileNameInput" type="text" value="Aarav Mehta"></label>
+        <label>Mobile number<input id="profilePhoneInput" type="tel" value="9876543210"></label>
+        <label>What support are you looking for?<select><option>Family and children</option><option>Starting or growing a business</option><option>Housing and utilities</option><option>Education</option></select></label>
+        <label>Annual household income<select id="profileIncomeInput"><option>₹2–5 lakh</option><option>Below ₹2 lakh</option><option>₹5–10 lakh</option><option>Above ₹10 lakh</option></select></label>
+        <label>Caste category<select id="profileCasteInput"><option>Prefer not to say</option><option>General</option><option>OBC</option><option>SC</option><option>ST</option><option>Other</option></select></label>
+        <div class="form-columns"><label>Father's name<input id="fatherNameInput" type="text" placeholder="Enter name"></label><label>Mother's name<input id="motherNameInput" type="text" placeholder="Enter name"></label></div>
+        <div class="form-columns"><label>Family size<select id="familySizeInput"><option>Family of 4</option><option>Single person</option><option>Family of 2</option><option>Family of 3</option><option>Family of 5+</option></select></label><label>Occupation<select id="occupationInput"><option>Small business</option><option>Student</option><option>Farmer</option><option>Salaried</option><option>Looking for work</option></select></label></div>
+        <label>District or city<input id="profileDistrictInput" type="text" value="Pune, Maharashtra"></label>
+        <button class="primary-button" type="submit">Update my matches <span>→</span></button>
+      </form>
+    </section>
+  </div>
+  <div class="modal-backdrop" id="lockModal" hidden>
+    <section class="modal lock-modal" role="dialog" aria-modal="true" aria-labelledby="lockTitle">
+      <button class="modal-close" type="button" aria-label="Close">×</button>
+      <div class="lock-icon">⌑</div><p class="eyebrow">PRIVATE PROFILE</p><h2 id="lockTitle">Unlock your profile</h2><p class="modal-copy">Your personal and family details are protected. Enter your 4-digit profile PIN to continue.</p>
+      <form id="unlockForm"><label>Profile PIN<input id="profilePinInput" type="password" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" placeholder="••••" required></label><button class="primary-button" type="submit">Unlock profile <span>→</span></button><small class="login-note">Session lock for this demo: 1234</small></form>
+    </section>
+  </div>
+  <div class="modal-backdrop" id="forgotModal" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="forgotTitle">
+      <button class="modal-close" type="button" aria-label="Close">×</button>
+      <div class="lock-icon">↻</div><p class="eyebrow">ACCOUNT RECOVERY</p><h2 id="forgotTitle">Reset your password</h2><p class="modal-copy">Verify your registered phone number, then create a new password.</p>
+      <form id="forgotForm">
+        <label>Registered mobile number<input id="forgotPhone" type="tel" inputmode="numeric" pattern="[0-9]{10}" placeholder="10-digit mobile number" required></label>
+        <button class="outline-button" type="button" id="sendOtp">Send OTP</button>
+        <div class="otp-area" id="otpArea" hidden><small class="otp-hint" id="otpHint"></small><label>One-time password<input id="otpInput" type="text" inputmode="numeric" maxlength="6" placeholder="6-digit OTP"></label><label>New password<input id="resetPassword" type="password" minlength="6" placeholder="At least 6 characters"></label><label>Confirm new password<input id="resetConfirmPassword" type="password" minlength="6" placeholder="Repeat your password"></label><button class="primary-button" type="submit">Reset password <span>→</span></button></div>
+      </form>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
