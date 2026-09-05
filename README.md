@@ -46,3 +46,5 @@ https://github.com/dheerajmakam06-web/schemeconnect-ai
 - OTP recovery currently uses the demo OTP `123456`; a real SMS provider must be connected for production.
 - Scheme information links to official government portals. Full automatic scheme synchronization requires an approved government API or data feed.
 - Always verify eligibility, documents, deadlines, and application status on the official government portal.
+- ## Author ##
+- ** MAKAM DHEERAJ NADH **
